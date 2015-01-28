@@ -1,10 +1,33 @@
 body{
-    background-color: gray;
-    text-align: center;
-}
+     background-color: gray;
+     text-align: center;
+ }
 canvas{
     background-color: white;
-	margin-top: 50px;
     width: 1000px;
     height: 500px;
+}
+#div-begin {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 1000px;
+    height: 500px;
+    z-index: 10;
+}
+#div-canvas {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 180px;
+    width: 1000px;
+    height: 500px;
+    z-index: 1;
+}
+#main {
+    position: relative;
+    width: 1000px;
+    height: 550px;
+}
+#bottom {
+    position: relative;
 }

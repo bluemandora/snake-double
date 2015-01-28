@@ -9,12 +9,17 @@
     <a id="forkMe" href="https://github.com/bluemandora/snake-double" target="_blank">
         <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9999;" src="//s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
     </a>
-    <canvas id="snake-canvas"></canvas>
+    <div id = "main">
+        <div id="div-canvas"><canvas id="snake-canvas"></canvas></div>
+        <div id="div-begin"><img src="images/begin.jpg"/></div>
+    </div>
+    <div id = "bottom">
     <hr/>
     <p>time:<span id="snake-time"></span>
         score:<span id="snake1-score"></span>/<span id="snake2-score"></span>
         length:<span id="snake1-length"></span>/<span id="snake2-length"></span>
     </p>
+    </div>
     <script src="javascripts/snake.js"></script>
 </body>
 </html>

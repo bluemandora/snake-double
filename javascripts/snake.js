@@ -1,10 +1,17 @@
 /**
  * Created by Joy on 2015/1/27.
  */
-if (confirm("Begin?") == 1) {
-    var game = new Game();
-    var snakeCanvas = document.getElementById("snake-canvas");//画布准备
-    var canvasContext = snakeCanvas.getContext("2d");
+var snakeCanvas = document.getElementById("snake-canvas");//画布准备
+var canvasContext = snakeCanvas.getContext("2d");
+var button = document.getElementById("div-begin");
+button.addEventListener('click', begin, false);
+function begin() {
+    canvasContext.clearRect(0, 0, 300, 150);
+    button.removeEventListener('click', begin, false);
+    button.style.display = "none";
+    button.addEventListener('click', pause, false);
+    snakeCanvas.addEventListener('click', pause, false);
+    game = new Game();
     game.iniGame();//游戏准备
     game.status = 1;//游戏处于开始的状态
     try{
@@ -14,8 +21,15 @@ if (confirm("Begin?") == 1) {
         alert(error);
     }
 }
-else {
-    alert("byebye!");
+function pause() {
+    if (game.status == 1) {
+        button.style.display = "";
+        game.status = 0;
+    } else {
+        button.style.display = "none";
+        game.status = 1;
+        Timer();
+    }
 }
 function createPoint(x, y) {
     this.x = x;
@@ -242,6 +256,8 @@ function Timer() {
             canvasContext.clearRect(0,0,300,150);
             game.iniGame();
             game.status = 1;
+        } else {
+            //window.close();
         }
     }
     game.time += 0.2;
